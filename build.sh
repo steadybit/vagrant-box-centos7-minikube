@@ -3,25 +3,24 @@
 set -e
 
 # Set version info
-BOX_VERSION_BASE=1.1.1
+export BOX_VERSION_BASE=1.3.0
 
 # Set versions requested of main components (These will be used in Packer and passed to Ansible downstream)
-export BOX_BASE="centos/7"
-export BOX_BASE_VERSION=2004.01
-export ANSIBLE_VERSION=2.10.0
-export MINIKUBE_VERSION=1.13.1
-export DOCKER_VERSION=19.03.13
-export KUBECTL_VERSION=1.19.2
-export HELM_VERSION=3.3.4
+export BOX_BASE="ilionx/centos7"
+export BOX_BASE_VERSION=1.0.0-20210208
+export MINIKUBE_VERSION=1.17.0
+export DOCKER_VERSION=20.10.2
+export KUBECTL_VERSION=1.20.2
+export HELM_VERSION=3.5.0
 export KUBETAIL_VERSION=1.6.12
 
 # Set versions of supported tools, if they don't match, a warning will be shown on screen
-export VIRTUALBOX_VERSION="6.1.14r140239"
-export PACKER_VERSION="1.6.2"
-export VAGRANT_VERSION="2.2.10"
+export VIRTUALBOX_VERSION="6.1.18r142142"
+export PACKER_VERSION="1.6.6"
+export VAGRANT_VERSION="2.2.14"
 
 # Set the Vagrant cloud user and box name (make sure you have admin permissions to, or are the owner of this repository)
-export VAGRANT_CLOUD_BOX_USER="mrvantage"
+export VAGRANT_CLOUD_BOX_USER="ilionx"
 export VAGRANT_CLOUD_BOX_NAME="centos7-minikube"
 
 # ############################################################################################## #
@@ -65,9 +64,9 @@ fi
 if [ -z "$DEFAULT_VAGRANT_CLOUD_USER" -o -z "$DEFAULT_VAGRANT_CLOUD_TOKEN" ]
 then
     # Ask user for vagrant cloud token
-    echo -n "What is your Vagrant Cloud username? [mrvantage] "
+    echo -n "What is your Vagrant Cloud username? [ilionx] "
     read user
-    user=${user:-mrvantage}
+    user=${user:-ilionx}
     export VAGRANT_CLOUD_USER=${user}
 
     # Ask user for vagrant cloud token
@@ -96,9 +95,8 @@ The box defaults to 2 CPU and 4GB of RAM, it is not advised to limit this.
 ---
 
 ## Versions included in this release
-Based on box [${BOX_BASE}](https://app.vagrantup.com/centos/boxes/7) version ${BOX_BASE_VERSION}
+Based on box [${BOX_BASE}](https://app.vagrantup.com/ilionx/boxes/centos7) version ${BOX_BASE_VERSION}
 * Latest OS updates installed at build time
-* ansible ${ANSIBLE_VERSION}
 * minikube ${MINIKUBE_VERSION}
 * docker ${DOCKER_VERSION}
 * kubectl ${KUBECTL_VERSION}
@@ -112,7 +110,7 @@ $(cat CHANGELOG.md)
 ---
 
 ## Source info
-[View source on Github](https://github.com/mrvantage/vagrant-box-centos7-minikube)
+[View source on Github](https://github.com/Q24/vagrant-box-centos7-minikube)
 
 Built on commit: \`${commit}\`
 "

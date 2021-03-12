@@ -2,7 +2,6 @@
   "variables": {
     "box_base": "{{ env `BOX_BASE` }}",
     "box_base_version": "{{ env `BOX_BASE_VERSION` }}",
-    "ansible_version": "{{ env `ANSIBLE_VERSION` }}",
     "minikube_version": "{{ env `MINIKUBE_VERSION` }}",
     "docker_version": "{{ env `DOCKER_VERSION` }}",
     "kubectl_version": "{{ env `KUBECTL_VERSION` }}",
@@ -29,15 +28,6 @@
     }
   ],
   "provisioners": [
-    {
-      "type": "shell",
-      "inline": [
-        "sudo yum install -y epel-release",
-        "sudo yum install -y python-pip",
-        "sudo pip install --upgrade pip",
-        "sudo pip install ansible=={{ user `ansible_version` }}"
-      ]
-    },
     {
       "type": "ansible-local",
       "playbook_file": "ansible/install-minikube.yml",

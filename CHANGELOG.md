@@ -1,4 +1,36 @@
 ## Changelog
+### 1.3.0-20210209
+* Moved project to Q24 github organization
+* Split project into base CentOS 7 box `ilionx/centos7`, and derivative minikube box `ilionx/centos7-minikube`
+* Moved box from `mrvantage/centos7-minikube` to `ilionx/centos7-minikube`
+
+### 1.2.0-20210126
+* Refactored base box, no longer using upstream centos/7 box, but building from scratch from the CentOS minimal ISO
+* Made sure VirtualBox guest additions 6.1.18 are installed and running
+
+### 1.1.4-20210125
+* Updated Minikube to version 1.17.0
+* Fixed installation of pip now that Python 2 is no longer supported in pip 21.0
+
+### 1.1.3-20210121
+* Added some yum packages to facilitate updating the VirtualBox Guest Additions in the later usage of the base box
+* Updated Ansible to version 2.10.5
+* Updated Minikube to version 1.16.0
+* Updated Docker to version 20.10.2
+* Updated kubectl to version 1.20.2
+* Updated Helm to version 3.5.0
+* Updated Virtualbox dependency to version 6.1.18r142142
+* Updated Packer dependency to version 1.6.6
+* Updated Vagrant dependency to version 2.2.14
+
+### 1.1.2-20201105
+* Updated Ansible to version 2.10.3
+* Updated Minikube to version 1.14.2
+* Updated kubectl to version 1.19.3
+* Updated Helm to version 3.4.0
+* Updated Virtualbox dependency to version 6.1.16r140961
+* Updated Packer dependency to version 1.6.3
+
 ### 1.1.1-20200929
 * Updated Ansible to version 2.10.0
 * Updated kubectl to version 1.19.2
