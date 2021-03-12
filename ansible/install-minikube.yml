@@ -3,22 +3,6 @@
   become_method: sudo
   tasks:
 
-    - name: install system updates
-      yum: name=* state=latest update_cache=yes
-
-    - name: create /mnt directory
-      file:
-        path: /mnt
-        state: directory
-
-    - name: disable SELinux
-      selinux:
-        state: disabled
-
-    - name: install prerequisites
-      yum:
-        name: [ vim, socat, device-mapper-persistent-data, lvm2, telnet, tcpdump, conntrack-tools, bind-utils, kernel-devel, elfutils-libelf-devel, gcc, cpp, glibc-devel, glibc-headers, kernel-headers, libmpc, mpfr, zlib-devel, bzip2 ]
-
     - name: download minikube version {{ minikube_version }} rpm
       get_url:
         url: https://github.com/kubernetes/minikube/releases/download/v{{ minikube_version }}/minikube-{{ minikube_version }}-0.x86_64.rpm

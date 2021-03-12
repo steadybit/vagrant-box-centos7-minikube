@@ -3,15 +3,15 @@
 set -e
 
 # Set version info
-export BOX_VERSION_BASE=1.3.0
+export BOX_VERSION_BASE=1.3.1
 
 # Set versions requested of main components (These will be used in Packer and passed to Ansible downstream)
 export BOX_BASE="ilionx/centos7"
-export BOX_BASE_VERSION=1.0.0-20210208
-export MINIKUBE_VERSION=1.17.0
-export DOCKER_VERSION=20.10.2
-export KUBECTL_VERSION=1.20.2
-export HELM_VERSION=3.5.0
+export BOX_BASE_VERSION=1.0.1-20210312
+export MINIKUBE_VERSION=1.18.1
+export DOCKER_VERSION=20.10.5
+export KUBECTL_VERSION=1.20.4
+export HELM_VERSION=3.5.3
 export KUBETAIL_VERSION=1.6.12
 
 # Set versions of supported tools, if they don't match, a warning will be shown on screen

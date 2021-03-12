@@ -1,4 +1,12 @@
 ## Changelog
+
+### 1.3.1-20210312
+* Updated ilionx/centos7 base box to version 1.0.1-20210312
+* Updated Minikube to version 1.18.1
+* Updated Docker to version 20.10.5
+* Updated kubectl to version 1.20.5
+* Updated Helm to version 3.5.3
+
 ### 1.3.0-20210209
 * Moved project to Q24 github organization
 * Split project into base CentOS 7 box `ilionx/centos7`, and derivative minikube box `ilionx/centos7-minikube`
