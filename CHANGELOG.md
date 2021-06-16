@@ -1,5 +1,13 @@
 ## Changelog
 
+### 1.3.2-20210616
+* Updated ilionx/centos7 base box to version 1.0.2-20210616
+* Updated Minikube to version 1.21.0
+* Updated Docker to version 20.10.7
+* Updated kubectl to version 1.21.1
+* Updated Helm to version 3.6.0
+* Updated kubetail to version 1.6.13
+
 ### 1.3.1-20210312
 * Updated ilionx/centos7 base box to version 1.0.1-20210312
 * Updated Minikube to version 1.18.1

@@ -3,21 +3,21 @@
 set -e
 
 # Set version info
-export BOX_VERSION_BASE=1.3.1
+export BOX_VERSION_BASE=1.3.2
 
 # Set versions requested of main components (These will be used in Packer and passed to Ansible downstream)
 export BOX_BASE="ilionx/centos7"
-export BOX_BASE_VERSION=1.0.1-20210312
-export MINIKUBE_VERSION=1.18.1
-export DOCKER_VERSION=20.10.5
-export KUBECTL_VERSION=1.20.4
-export HELM_VERSION=3.5.3
-export KUBETAIL_VERSION=1.6.12
+export BOX_BASE_VERSION=1.0.2-20210616
+export MINIKUBE_VERSION=1.21.0
+export DOCKER_VERSION=20.10.7
+export KUBECTL_VERSION=1.21.1
+export HELM_VERSION=3.6.0
+export KUBETAIL_VERSION=1.6.13
 
 # Set versions of supported tools, if they don't match, a warning will be shown on screen
-export VIRTUALBOX_VERSION="6.1.18r142142"
-export PACKER_VERSION="1.6.6"
-export VAGRANT_VERSION="2.2.14"
+export VIRTUALBOX_VERSION="6.1.22r144080"
+export PACKER_VERSION="1.7.2"
+export VAGRANT_VERSION="2.2.16"
 
 # Set the Vagrant cloud user and box name (make sure you have admin permissions to, or are the owner of this repository)
 export VAGRANT_CLOUD_BOX_USER="ilionx"
