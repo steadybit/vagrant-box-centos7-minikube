@@ -1,5 +1,13 @@
 ## Changelog
 
+### 1.3.4-20220427
+* Updated Steadybit/centos7 base box to version 1.3.4-20220427
+* Updated Minikube to version 1.25.2
+* Updated Docker to version 20.10.14
+* Updated Helm to version 3.8.2
+* Updated Kubectl to version 1.23.6
+* Update Centos7
+
 ### 1.3.3-20210809
 * Updated ilionx/centos7 base box to version 1.0.3-20210809
 * Updated Minikube to version 1.22.0

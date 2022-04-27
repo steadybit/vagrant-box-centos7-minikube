@@ -3,6 +3,18 @@
   become_method: sudo
   tasks:
 
+    - name: Update
+      shell: yum update -y
+
+    - name: Install JQ
+      shell: yum -y install jq
+
+    - name: Install K9S
+      shell: |
+        curl -sS https://webinstall.dev/k9s | bash
+        mkdir -p /home/vagrant/.local/bin
+        sudo cp /root/.local/opt/k9s-v0.25.18/bin/k9s /home/vagrant/.local/bin/k9s
+
     - name: download minikube version {{ minikube_version }} rpm
       get_url:
         url: https://github.com/kubernetes/minikube/releases/download/v{{ minikube_version }}/minikube-{{ minikube_version }}-0.x86_64.rpm
@@ -65,7 +77,7 @@
         name: kubelet
         enabled: yes
         state: started
-    
+
     - name: create dir /home/vagrant/bin
       file:
         path: /home/vagrant/bin
@@ -150,7 +162,7 @@
         mode: 0755
         owner: vagrant
         group: vagrant
-      
+
     - name: download kubetail version {{ kubetail_version }}
       get_url:
         url: https://codeload.github.com/johanhaleby/kubetail/tar.gz/{{ kubetail_version }}

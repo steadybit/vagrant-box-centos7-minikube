@@ -29,10 +29,10 @@ DEFAULT_VAGRANT_CLOUD_USER="your.username"
 DEFAULT_VAGRANT_CLOUD_TOKEN="your.vagrant.cloud.token"
 ```
 
-2. The script will update box `ilionx/centos7-minikube`. This name is hardcoded in the scripts. If you wish to create a box in your own account, change the following two environment variables in `build.sh`:
+2. The script will update box `Steadybit/centos7-minikube`. This name is hardcoded in the scripts. If you wish to create a box in your own account, change the following two environment variables in `build.sh`:
 
 ```
-export VAGRANT_CLOUD_BOX_USER="ilionx"
+export VAGRANT_CLOUD_BOX_USER="Steadybit"
 export VAGRANT_CLOUD_BOX_NAME="centos7-minikube"
 ```
 

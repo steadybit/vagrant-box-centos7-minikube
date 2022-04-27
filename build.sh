@@ -3,24 +3,24 @@
 set -e
 
 # Set version info
-export BOX_VERSION_BASE="1.3.3"
+export BOX_VERSION_BASE="1.3.4"
 
 # Set versions requested of main components (These will be used in Packer and passed to Ansible downstream)
 export BOX_BASE="ilionx/centos7"
 export BOX_BASE_VERSION="1.0.3-20210809"
-export MINIKUBE_VERSION="1.22.0"
-export DOCKER_VERSION="20.10.8"
-export KUBECTL_VERSION="1.22.0"
-export HELM_VERSION="3.6.3"
+export MINIKUBE_VERSION="1.25.2"
+export DOCKER_VERSION="20.10.14"
+export KUBECTL_VERSION="1.23.6"
+export HELM_VERSION="3.8.2"
 export KUBETAIL_VERSION="1.6.13"
 
 # Set versions of supported tools, if they don't match, a warning will be shown on screen
-export VIRTUALBOX_VERSION="6.1.26r145957"
+export VIRTUALBOX_VERSION="6.1.32r149290"
 export PACKER_VERSION="1.7.4"
-export VAGRANT_VERSION="2.2.16"
+export VAGRANT_VERSION="2.2.19"
 
 # Set the Vagrant cloud user and box name (make sure you have admin permissions to, or are the owner of this repository)
-export VAGRANT_CLOUD_BOX_USER="ilionx"
+export VAGRANT_CLOUD_BOX_USER="Steadybit"
 export VAGRANT_CLOUD_BOX_NAME="centos7-minikube"
 
 # ############################################################################################## #
@@ -86,7 +86,7 @@ export BOX_VERSION=${BOX_VERSION_BASE}-$(date +'%Y%m%d')
 commit=$(git --no-pager log -n 1 --format="%H")
 export BOX_VERSION_DESCRIPTION="
 ## Description
-This box is based on the ${BOX_BASE} box version ${BOX_BASE_VERSION}. I try to keep the builds up to date with the latest version of this box.
+This box is based on the ${BOX_BASE} box version ${BOX_BASE_VERSION}.
 When the box boots it contains a running minikube, ready to deploy kubenetes manifests, and kubectl is pre configured for the vagrant user.
 Helm is installed to allow the immediate deployment of charts.
 
@@ -110,7 +110,7 @@ $(cat CHANGELOG.md)
 ---
 
 ## Source info
-[View source on Github](https://github.com/Q24/vagrant-box-centos7-minikube)
+[View source on Github](https://github.com/steadybit/vagrant-box-centos7-minikube)
 
 Built on commit: \`${commit}\`
 "
@@ -123,6 +123,7 @@ packer validate packer.json
 
 # Run the actual build
 echo "Building box version ${BOX_VERSION}"
+#packer build -debug -force -on-error=cleanup packer.json
 packer build -force -on-error=cleanup packer.json
 
 # Tag git commit for this build
